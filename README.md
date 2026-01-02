@@ -16,7 +16,9 @@ Les 2 TP ont étaient réalisés en binôme avec Emma GAUDIN (étudiante de la m
   
 ## TP2
 ### Sujet
--
+-convergence en probabilité en presque sure
+-convergence en loi et théorème central limite
+-intégration méthode de Monte Carlo et intervalle de confiance
 ### Fichier
 - notebook Rmd
 - fichier markdown
