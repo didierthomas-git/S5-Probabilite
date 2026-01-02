@@ -5,9 +5,9 @@ Les 2 TP ont étaient réalisés en binôme avec Emma GAUDIN (étudiante de la m
 
 ## TP1
 ### Sujet
--Simulation de la loi $\mathbb{U}\([0,1]\)$
--Méthode de l'inverse
--Méthode de l'acceptation-rejet ("hit and miss")
+-Simulation de la loi $\mathbb{U}\([0,1]\)$ \
+-Méthode de l'inverse \
+-Méthode de l'acceptation-rejet ("hit and miss") \
 ### Fichier
 - rendu final pdf
 - fichier markdown
