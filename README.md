@@ -3,15 +3,26 @@ Travaux Pratiques de probabilités réalisés lors du S5 (sept-dec 2025) \
 Les énoncés sont de la main de James LEDOUX http://ledoux.perso.math.cnrs.fr/ \
 Les 2 TP ont étaient réalisés en binôme avec Emma GAUDIN (étudiante de la même promotion)
 
-## Contenu
-### TP1
+## TP1
+### Sujet
+-Simulation de la loi $\mathbb{U}\([0,1]\)$
+-Méthode de l'inverse
+-Méthode de l'acceptation-rejet ("hit and miss")
+### Fichier
 - rendu final pdf
 - fichier markdown
 - notebook Rmd
 - énoncé pdf
-### TP2
+  
+## TP1
+### Sujet
+-
+### Fichier
+- rendu final pdf
+- fichier markdown
+- notebook Rmd
+- énoncé pdf
 
 ## Accès rapide
-- Notebook 1 : `notebooks/NOM_NOTEBOOK_1.ipynb`
-- Notebook 2 : `notebooks/NOM_NOTEBOOK_2.ipynb`
-- R Markdown : `rmd/NOM_1.Rmd` (rendu : `docs/NOM_1.pdf`)
+- TP1
+- TP2
