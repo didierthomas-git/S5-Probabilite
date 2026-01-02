@@ -24,5 +24,5 @@ Les 2 TP ont étaient réalisés en binôme avec Emma GAUDIN (étudiante de la m
 - énoncé pdf
 
 ## Accès rapide
-- TP1
-- TP2
+- [TP1](TP1/)
+- [TP2](TP2/)
