@@ -7,20 +7,20 @@ Les 2 TP ont étaient réalisés en binôme avec Emma GAUDIN (étudiante de la m
 ### Sujet
 -Simulation de la loi $\mathbb{U}\([0,1]\)$ \
 -Méthode de l'inverse \
--Méthode de l'acceptation-rejet ("hit and miss") \
+-Méthode de l'acceptation-rejet ("hit and miss")
 ### Fichier
-- rendu final pdf
-- fichier markdown
 - notebook Rmd
+- fichier markdown
+- rendu final pdf
 - énoncé pdf
   
 ## TP2
 ### Sujet
 -
 ### Fichier
-- rendu final pdf
-- fichier markdown
 - notebook Rmd
+- fichier markdown
+- rendu final pdf
 - énoncé pdf
 
 ## Accès rapide
