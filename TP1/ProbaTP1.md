@@ -71,8 +71,6 @@ même loi que X.
 
 Preuve:
 
-
-
 Soit $x \in \mathbb{R}$, en posant $Y = Q_X(U)$, on a :
 
 $$
@@ -168,18 +166,16 @@ On remarque grace à cette courbe qu'vec un nombre d'échantillons assez grand l
 
 **Lemma 3.3** Si Y est une v.a. de densité g et si $U ∼ Unif([0, 1])$ indépendante de Y alors :
 1. la probabilité d’accepter à l’étape 3 la valeur produite à l’étape 1 de l’algorithme est :
-$$
-\mathbb{P}\{U c g(Y) \le f_X(Y)\} = \frac{1}{c}
-$$
+$\mathbb{P}\{U c g(Y) \le f_X(Y)\} = \frac{1}{c}$
 
 Preuve:
 
 $$
-\begin{align*}
+\begin{aligned}
 \mathbb{P}\big(U\,c\,g(Y) \le f_X(Y)\big)
 &= \iint_{(u,y)\in[0,1]\times\mathbb{R}, \, u c g(y) \le f_X(y)} f_{U,Y}(u,y)\, du\, dy \\
 &= \iint_{(u,y)\in[0,1]\times\mathbb{R}, \, u c g(y) \le f_X(y)} f_{U}(u)\, f_{Y}(y)\, du\, dy
-\end{align*}
+\end{aligned}
 $$
 
 car $U$ et $Y$ sont indépendantes
@@ -187,24 +183,24 @@ car $U$ et $Y$ sont indépendantes
 On sait que U suit une loi uniforme :  $U ∼ Unif([0, 1])$ et la densité de $Y$ est $g$ donc :
 
 $$
-\begin{align*}
+\begin{aligned}
 \mathbb{P}\big(U\,c\,g(Y) \le f_X(Y)\big)
 &= \iint_{(u,y)\in[0,1]\times\mathbb{R}, \, u c g(y) \le f_X(y)} 1_{[0,1]}(u)\, g(y)\, du\, dy\\
 \text{ or }  \mathbb{P}\big(u c g(y) \le f_X(y)\big)= \mathbb{P}\big(u \le \frac{f_X(y)}{cg(y)},g(y)>0\big)+\cancel{\mathbb{P}\big(g(y)=0\big)}\\
  \text{ Donc } \mathbb{P}\big(U\,c\,g(Y) \le f_X(Y)\big)=\int_{\mathbb{R}} \int_{-\infty}^{\frac{f_X(y)}{c\,g(y)}} 1_{[0,1]}(u)\, g(y)\, du\, dy
-\end{align*}
+\end{aligned}
 $$
 
 Par le théorème de Fubini–Tonelli,
 
 $$
-\begin{align*}
+\begin{aligned}
 \mathbb{P}\big(U\,c\,g(Y) \le f_X(Y)\big)
 = \int_{\mathbb{R}} g(y) \left( \int_0^{\min(1, {\frac{f_X(y)}{c\,g(y)}})} du \right) dy
-\end{align*}
+\end{aligned}
 $$
 
-Or $ \dfrac{f_X(y)}{c\,g(y)} \le 1 $, donc :
+Or $\dfrac{f_X(y)}{c\,g(y)} \le 1$, donc :
 
 $$
 \begin{aligned}
@@ -216,17 +212,18 @@ $$
 $$
 
 On obtient bien:
+
 $$
 \begin{aligned}
 \mathbb{P}\big(U\,c\,g(Y) \le f_X(Y)\big) =\frac{1}{c}
 \end{aligned}
 $$
 
-2) La loi de \( Y \) sachant que l’événement $ \{U\,c\,g(Y) \le f_X(Y)\} $ est réalisé admet pour densité $f_X $.
+2) La loi de \( Y \) sachant que l’événement $\{U\,c\,g(Y) \le f_X(Y)\}$ est réalisé admet pour densité $f_X$.
 
 Preuve:
 
-Soit $ A := \{\, U \cdot c \cdot g(Y) \le f_X(Y) \,\} $ avec $\mathbb{P}(A) =\frac{1}{c}$
+Soit $A := \{ U \cdot c \cdot g(Y) \le f_X(Y) \,\}$ avec $\mathbb{P}(A) =\frac{1}{c}$
 
 $$
 \begin{aligned}
@@ -247,7 +244,6 @@ $$
 a) $\mathbb{P}(Ucg(Y)\le f(Y)) = \int_{\mathbb{R}} f(y)dy/c$.
 
 Preuve :
-$\require{cancel}$
 
 $$
 \begin{aligned}
@@ -269,7 +265,7 @@ b) la loi de $Y$ sachant que l'événement $\{Ucg(Y)\le f(Y)\}$ est réalisé ad
 
 Preuve :
 
-Soit $ B := \{Ucg(Y)\le f(Y)\} $ avec $\mathbb{P}(B) =\frac{\int_\mathbb{R}f(x)dx}{c}$
+Soit $B := \{Ucg(Y)\le f(Y)\} $ avec $\mathbb{P}(B) =\frac{\int_\mathbb{R}f(x)dx}{c}$
 
 $$
 \begin{aligned}
@@ -401,7 +397,6 @@ S/1000
 ```
 
 
-
 Dans le test de Kolmogorov-Smirnov, plus p-value est grande, plus les valeurs de l'échantillon sont des valeurs "raisonnables" de la loi normale. On réalise donc 1000 tests, qui nous donnent une valeur moyenne de p-value bien supérieure à 0,01. On en conclut que notre fonction rnormAR simule bien la loi N(0, 1) .
 
 On s'interresse maintenant à la rapidité d'éxecution de la fonction rnomrAR, comparée à rnorm implémentée par défault dans R.
@@ -438,7 +433,7 @@ a)On a :
 $c \cdot g(x, y) = \frac{1}{\text{Aire}(S)} \cdot 1_{[0,1]^2}(x, y)
 \ge \frac{1}{\text{Aire}(S)} \cdot 1_S(x, y)
 \quad \text{puisque } S \subset [0,1]^2,$
-d’où $ c \cdot g(x, y) \ge f(x, y) $.
+d’où $ c \cdot g(x, y) \ge f(x, y)$.
 
 
 
@@ -579,3 +574,4 @@ Enfin, nous avons appliqué la méthode AR pour générer un couple de variables
 
 
 Ce TP nous a permis de comprendre la puissance des méthodes de simulation probabiliste : elles permettent de générer des échantillons suivant des lois complexes, d’estimer des probabilités ou des quantiles et de modéliser des phénomènes aléatoires lorsque les calculs analytiques sont difficiles.
+
