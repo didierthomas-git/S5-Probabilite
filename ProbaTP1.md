@@ -1,4 +1,4 @@
-#TP1:Méthode de Monte Carlo pour la simulation probabiliste
+# TP1 : Méthode de Monte Carlo pour la simulation probabiliste
 
 **GAUDIN Emma**
 
@@ -38,12 +38,6 @@ curve(punif, 0, 1, add = TRUE, col = 2)
 legend("topleft", legend = c("empirique", "théorique"), col = c(1, 2), lty = c(1, 1));
 ```
 
-
-    
-    
-
-
-
 ```{r}
 
 x100 = runif(100)
@@ -53,11 +47,6 @@ curve(punif, 0, 1, add = TRUE, col = 2)
 
 legend("topleft", legend = c("empirique", "théorique"), col = c(1, 2), lty = c(1, 1));
 ```
-
-
-        
-
-
 
 ```{r}
 
@@ -85,7 +74,8 @@ Preuve:
 
 
 Soit $x \in \mathbb{R}$, en posant $Y = Q_X(U)$, on a :
-\
+
+$$
 \begin{aligned}
 F_Y(x) &= \mathbb{P}(Y \leq x) \\
        &= \mathbb{P}(Q_X(U) \leq x) \\
@@ -97,7 +87,8 @@ F_Y(x) &= \mathbb{P}(Y \leq x) \\
        F_X(x), & \text{sinon.}
        \end{cases}
 \end{aligned}
-\
+$$
+
 Ainsi, $Q_X(U)$ admet la même loi que $X$, puisque $F_X(\mathbb{R}) \subset [0, 1]$.
 
 
@@ -120,8 +111,9 @@ $$
 
 Sa fonction de répartition est :
 
+$F(x) =$
+
 $$
-F(x) =
 \begin{cases}
 \frac{a}{2} e^{ax}, & x \le 0, \\
 1 - \frac{a}{2} e^{-ax}, & x \ge 0.
@@ -137,8 +129,9 @@ $$
 
 Ainsi, la fonction inverse est donnée par :
 
+$G(U) =$
+
 $$
-G(U) =
 \begin{cases}
 \frac{1}{a}ln(2U), & U \in [0, 1/2[, \\
 -\frac{1}{a}ln(2(1-U)), & U \in [1/2, 1[.
@@ -169,64 +162,73 @@ curve(1/2*exp(1*x), from=-10, to=0,add=TRUE, col=2)
 legend("topleft", legend = c("empirique", "théorique"), col = c(1, 2), lty = c(1, 1));
 ```
 
-
-    
-    
-
-
 On remarque grace à cette courbe qu'vec un nombre d'échantillons assez grand la méthode de l'inverse marche très bien et on retrouve la loi de laplace théorique.
 
 ### **3.2) Méthode de l'acceptation-rejet (AR) ou "Hit and Miss"**
 
 **Lemma 3.3** Si Y est une v.a. de densité g et si $U ∼ Unif([0, 1])$ indépendante de Y alors :
-1. la probabilité d’accepter à l’étape 3 la valeur produite à l’étape 1 de l’algorithme est : $$
+1. la probabilité d’accepter à l’étape 3 la valeur produite à l’étape 1 de l’algorithme est :
+$$
 \mathbb{P}\{U c g(Y) \le f_X(Y)\} = \frac{1}{c}
 $$
 
 Preuve:
+
+$$
 \begin{align*}
 \mathbb{P}\big(U\,c\,g(Y) \le f_X(Y)\big)
 &= \iint_{(u,y)\in[0,1]\times\mathbb{R}, \, u c g(y) \le f_X(y)} f_{U,Y}(u,y)\, du\, dy \\
 &= \iint_{(u,y)\in[0,1]\times\mathbb{R}, \, u c g(y) \le f_X(y)} f_{U}(u)\, f_{Y}(y)\, du\, dy
 \end{align*}
+$$
+
 car $U$ et $Y$ sont indépendantes
 
-
 On sait que U suit une loi uniforme :  $U ∼ Unif([0, 1])$ et la densité de $Y$ est $g$ donc :
+
+$$
 \begin{align*}
 \mathbb{P}\big(U\,c\,g(Y) \le f_X(Y)\big)
 &= \iint_{(u,y)\in[0,1]\times\mathbb{R}, \, u c g(y) \le f_X(y)} 1_{[0,1]}(u)\, g(y)\, du\, dy\\
 \text{ or }  \mathbb{P}\big(u c g(y) \le f_X(y)\big)= \mathbb{P}\big(u \le \frac{f_X(y)}{cg(y)},g(y)>0\big)+\cancel{\mathbb{P}\big(g(y)=0\big)}\\
  \text{ Donc } \mathbb{P}\big(U\,c\,g(Y) \le f_X(Y)\big)=\int_{\mathbb{R}} \int_{-\infty}^{\frac{f_X(y)}{c\,g(y)}} 1_{[0,1]}(u)\, g(y)\, du\, dy
 \end{align*}
+$$
 
 Par le théorème de Fubini–Tonelli,
 
+$$
 \begin{align*}
 \mathbb{P}\big(U\,c\,g(Y) \le f_X(Y)\big)
 = \int_{\mathbb{R}} g(y) \left( \int_0^{\min(1, {\frac{f_X(y)}{c\,g(y)}})} du \right) dy
 \end{align*}
+$$
 
 Or $ \dfrac{f_X(y)}{c\,g(y)} \le 1 $, donc :
 
-
+$$
 \begin{aligned}
 \mathbb{P}\big(U\,c\,g(Y) \le f_X(Y)\big)
 &= \int_{\mathbb{R}} g(y)\, \frac{f_X(y)}{c\,g(y)}\, dy \\
 &= \frac{1}{c} \int_{\mathbb{R}} f_X(y)\, dy\\
 &=\frac{1}{c} \text{ car } f_{X} \text{ est une densité}
 \end{aligned}
+$$
 
 On obtient bien:
+$$
 \begin{aligned}
 \mathbb{P}\big(U\,c\,g(Y) \le f_X(Y)\big) =\frac{1}{c}
 \end{aligned}
+$$
 
 2) La loi de \( Y \) sachant que l’événement $ \{U\,c\,g(Y) \le f_X(Y)\} $ est réalisé admet pour densité $f_X $.
 
 Preuve:
 
 Soit $ A := \{\, U \cdot c \cdot g(Y) \le f_X(Y) \,\} $ avec $\mathbb{P}(A) =\frac{1}{c}$
+
+$$
 \begin{aligned}
 F_{Y|A}(t)
 &= \mathbb{P}(Y \le t \mid A) \\
@@ -236,8 +238,7 @@ F_{Y|A}(t)
 &= \int_{-\infty}^{t} f_X(y)\, dy \\
 &= F_X(t).
 \end{aligned}
-
-
+$$
 
 **Commentaire 3.2**
 
@@ -247,6 +248,8 @@ a) $\mathbb{P}(Ucg(Y)\le f(Y)) = \int_{\mathbb{R}} f(y)dy/c$.
 
 Preuve :
 $\require{cancel}$
+
+$$
 \begin{aligned}
 \mathbb{P}(Ucg(Y)\le f(Y))&=\mathbb{P}(U\le\frac{f(Y)}{c\,g(Y)}\,,\,g(Y)\neq0)+\mathbb{P}(0\le f(Y)\,,\,g(Y)=0)\\
 &=\mathbb{P}(U\le\frac{f(Y)}{c\,g(Y)}\,,\,g(Y)\neq0)+\cancel{\mathbb{P}(g(Y)=0)}\\
@@ -260,12 +263,15 @@ $\require{cancel}$
 &=\int_{\{g(y)>0\}} \frac{f(y)}{c} dy + \int_{\{g(y)=0\}} \frac{f(y)}{c} dy\\
 &=\int _\mathbb{R}\frac{f(y)}{c}dy
 \end{aligned}
+$$
 
 b) la loi de $Y$ sachant que l'événement $\{Ucg(Y)\le f(Y)\}$ est réalisé admet pour densité $f_X(\cdot) = f(\cdot)/\int_\mathbb{R}f(y)dy$
 
 Preuve :
 
 Soit $ B := \{Ucg(Y)\le f(Y)\} $ avec $\mathbb{P}(B) =\frac{\int_\mathbb{R}f(x)dx}{c}$
+
+$$
 \begin{aligned}
 F_{Y|B}(t)
 &= \mathbb{P}(Y \le t \mid B) \\
@@ -277,6 +283,7 @@ F_{Y|B}(t)
 &=\int_{-\infty}^{t}\frac{f(y)}{\int_\mathbb{R}f(x)dx}\,dy\\
 &=F(t)
 \end{aligned}
+$$
 
 Ainsi la méthode de l'acceptation-rejet peut être utilisée dans un cas plus large lorsque $f_X$ n'est plus un densité ou quand elle n'est connue qu'à une constante multiplicative près.
 
@@ -287,7 +294,6 @@ $g_a(x) = \frac{a}{2} \exp(-a |x|)$ pour tout $x \in \mathbb{R}$,
 associée à une loi dite doublement exponentielle ou de Laplace.
 
 D'abord grâce à la fonction curve nous supperposons  les densités dnorm et $g_a$ pour quelques valeurs de a.
-
 
 
 ```{r}
@@ -420,10 +426,7 @@ matrice
 
 On remarque ici que la fonction rnormAR est moins rapide que rnorm, d'autant plus lorsque le nombre de valeurs devient important.
 
-
 Code R7
-
-
 
 Le modèle mathématique d’un tirage au hasard d’un point dans le carré $([0,1]^2)$
 est donné par la probabilité sur le plan définie par :
@@ -573,5 +576,6 @@ Durant ce TP, nous avons pu nous initier à la simulation de lois de probabilit�
 Nous avons ensuite étudié la méthode de l'**acceptation-rejet** (AR) à travers le lemme 3.3 et le commentaire 3.2. Cette méthode consiste à majorer la densité cible à une constante près, puis à appliquer un algorithme pour accepter ou rejeter des candidats. Elle nous a permis de simuler la loi normale centrée réduite à partir d’une loi de Laplace (code R6). Des tests ont été réalisés afin de vérifier que les échantillons simulés suivaient bien la loi souhaitée.
 
 Enfin, nous avons appliqué la méthode AR pour générer un couple de variables aléatoires uniformes dans un pavé de $\mathbb{R}^2$ et simuler des points dans un domaine donné (code R7).
+
 
 Ce TP nous a permis de comprendre la puissance des méthodes de simulation probabiliste : elles permettent de générer des échantillons suivant des lois complexes, d’estimer des probabilités ou des quantiles et de modéliser des phénomènes aléatoires lorsque les calculs analytiques sont difficiles.
