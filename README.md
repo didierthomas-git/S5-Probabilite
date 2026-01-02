@@ -14,7 +14,7 @@ Les 2 TP ont étaient réalisés en binôme avec Emma GAUDIN (étudiante de la m
 - notebook Rmd
 - énoncé pdf
   
-## TP1
+## TP2
 ### Sujet
 -
 ### Fichier
