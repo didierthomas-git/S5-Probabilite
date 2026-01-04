@@ -4,6 +4,7 @@ Les énoncés sont de la main de James LEDOUX http://ledoux.perso.math.cnrs.fr/ 
 Les 2 TP ont étaient réalisés en binôme avec Emma GAUDIN (étudiante de la même promotion)
 
 ## TP1
+- [TP1](TP1/)
 ### Sujet
 -Simulation de la loi $\mathbb{U}\([0,1]\)$ \
 -Méthode de l'inverse \
@@ -15,6 +16,7 @@ Les 2 TP ont étaient réalisés en binôme avec Emma GAUDIN (étudiante de la m
 - énoncé pdf
   
 ## TP2
+- [TP2](TP2/)
 ### Sujet
 -convergence en probabilité en presque sure \
 -convergence en loi et théorème central limite \
@@ -24,7 +26,3 @@ Les 2 TP ont étaient réalisés en binôme avec Emma GAUDIN (étudiante de la m
 - fichier markdown
 - rendu final pdf
 - énoncé pdf
-
-## Accès rapide
-- [TP1](TP1/)
-- [TP2](TP2/)
