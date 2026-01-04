@@ -1,4 +1,4 @@
-# S5-Probabilite
+# S5-Probabilites
 Travaux Pratiques de probabilités réalisés lors du S5 (sept-dec 2025) \
 Les énoncés sont de la main de James LEDOUX http://ledoux.perso.math.cnrs.fr/ \
 Les 2 TP ont étaient réalisés en binôme avec Emma GAUDIN (étudiante de la même promotion)
